@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[git上传代码的指令]]></title>
+    <url>%2F2018%2F05%2F22%2Fgit%E4%B8%8A%E4%BC%A0%E4%BB%A3%E7%A0%81%E7%9A%84%E6%8C%87%E4%BB%A4%2F</url>
+    <content type="text"><![CDATA[首先要理解git的工作原理 &emsp;git是分布式的工作原理，自己的电脑就是一个服务器，每次写的代码都可以保存到自己的电脑中，并有相对应的版本号，即使文件不小心被删除了，也可以根据版本号进行恢复。 &emsp;在git工作的时候其中有三个分区：分别是工作区、暂存区、版本区。 上传的指令 &emsp;在我们写代码的时候就是在工作区进行的操作，每次写入的代码都会保存在工作区里面，但是在不小心删除工作区的文件的时候，文件就会被删除了，为了恢复被删除的文件就需要先把文件上传，分为以下两个步骤： &emsp;1、把文件由工作区上传到暂存区分为两种方法 &emsp;第一种：上传一个文件到暂存区1$ git add 文件的名字 &emsp;第二种：上传全部的工作区文件到暂存区1$ git add . &emsp;2、把文件上传到版本区也是有两种方法 &emsp;第一种是把暂存区所有的文件都上传到版本区1$ git commit -m &quot;注释&quot; &emsp;第二种是从工作区上传到版本区，但是这种方法的前提是要上传的文件被commit过的才行，有局限性1$ git commit -a -m &quot;注释&quot; git三个分区内文件内容的比较指令&emsp;1、工作区和暂存区的比较指令1$ git diff &emsp;2、暂存区和版本区的比较指令1$ git diff --cached &emsp;3、工作区和版本区的比较指令1$ git diff master &emsp;对于以上三个指令，在输入指令后会在git bash上显示两个想比较的分区中同一个文件的改动之处]]></content>
+      <categories>
+        <category>knowledge</category>
+      </categories>
+      <tags>
+        <tag>-git</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[git同步数据]]></title>
     <url>%2F2018%2F05%2F21%2Fgit%E5%90%8C%E6%AD%A5%E6%95%B0%E6%8D%AE%2F</url>
     <content type="text"><![CDATA[第一种git和github一起操作的第一次的操作1、新建一个文件夹files2、在github上找到想要下载下来的文件点击右上角的fork3、点击clone or download（绿色的） 复制下网址4、打开文件夹flies，在flies里面运行git bash输入以下指令1$ git clone https://XXXXXXXXXXXXX 输入上面指令后再输入以下指令就可以把文件下载到本地了1$ git pull 在别人完成了文件的更新之后进行以下操作1、在自己的github中找到fork的仓库也就yourname/xxx，把它删除掉，在setting中最下面有删除，输入名称点击删除即可2、再去别人的github中fork想更新的仓库3、回到本地的files里面运行git bash执行一下指令1$ git pull 第二种进行的就是git上的指令操作了1、新建一个文件夹files2、在新建文件夹中创建环境,运行git bash执行一下指令1$ git init 3、找到自己想更新的仓库点击clone or download（绿色的）4、创建一个远程仓库，在文件夹中运行git bash执行以下指令1$ git remote add XXX https://xxxx add后面的XXX就是创建的远程仓库的名字（可以用git remote查看远程仓库有哪些）https://xxxx 是clone的网址5、把远程仓库的数据升级，在文件中运行git bash 执行以下指令1$ git remote updata XXX 6、从远程的仓库中把数据下载到本地1$ git pull XXX master 在以后更新的时候只需在git bash中执行以下指令12$ git remote update$ git pull XXX master]]></content>
