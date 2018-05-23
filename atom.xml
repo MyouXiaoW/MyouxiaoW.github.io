@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-05-22T13:25:39.761Z</updated>
+  <updated>2018-05-23T14:59:11.272Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>简单的记录promise</title>
+    <link href="http://yoursite.com/2018/05/23/%E7%AE%80%E5%8D%95%E7%9A%84%E8%AE%B0%E5%BD%95promise/"/>
+    <id>http://yoursite.com/2018/05/23/简单的记录promise/</id>
+    <published>2018-05-23T14:13:24.000Z</published>
+    <updated>2018-05-23T14:59:11.272Z</updated>
+    
+    <content type="html"><![CDATA[<hr><p>&emsp;在学习AJAX的过程中我有很多的不能够理解的地方，例如同步和异步，虽然能有简单的例子给我参考，但是我还是有点模糊，之后又遇到了promise这个ES6中新的属性，我就更加的晕了。但是学习的过程就是这样的，不奢望自己能够一蹴而就，只要自己能够坚持住就满足了。晚上回来之后就开始琢磨promise到底是个什么鬼东西，看了几篇文章，也看了阮一峰的ES6入门，算是对它的方法有了一点点的了解，现在只能说是在这里把它记录下来，方便自己以后更深入的学习。</p><hr><h2 id="promise的三种状态"><a href="#promise的三种状态" class="headerlink" title="promise的三种状态"></a>promise的三种状态</h2><p>&emsp;在看得时候不奢求理解只是想记下来它的三个状态：pending（等待态）、fufiled（成功态）、rejected（失败态）</p><hr><h2 id="promise解决的两个问题"><a href="#promise解决的两个问题" class="headerlink" title="promise解决的两个问题"></a>promise解决的两个问题</h2><p>&emsp;1、回调地狱的问题，解决代码难以维护，第一个函数的输出是第二个函数的输入。<br>&emsp;2、支持多个并发的请示，并获得并发的请求数据。</p><hr><h2 id="promise接收的参数"><a href="#promise接收的参数" class="headerlink" title="promise接收的参数"></a>promise接收的参数</h2><p>&emsp;promise接收一个参数这是阮大神说的，我的理解就是promise只接收一种参数，就是函数，但是要传入两个参数分别是：<br>&emsp;resolve：异步操作执行成功后的回调函数。<br>&emsp;reject：异步操作执行失败后的回调函数。<br>&emsp;这里引用了阮大神的实例<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">const promise = new Promise(function(resolve, reject) &#123;</span><br><span class="line">  // ... some code</span><br><span class="line"></span><br><span class="line">  if (/* 异步操作成功 */)&#123;</span><br><span class="line">    resolve(value);</span><br><span class="line">  &#125; else &#123;</span><br><span class="line">    reject(error);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p><hr><h2 id="then的链式操作"><a href="#then的链式操作" class="headerlink" title="then的链式操作"></a>then的链式操作</h2><p>&emsp;then这个链式操作中有两个参数一个是resolve的回调另一个就是reject的回调。当p对象的状态是resolved的时候后调用，另一个是p对象的状态是reject的时候调用。第二个参数可以不写。这两个函数可以接受p传出的值作为参数。</p><hr><h2 id="catch的操作"><a href="#catch的操作" class="headerlink" title="catch的操作"></a>catch的操作</h2><p>&emsp;catch是指定reject的回调，在then的第一个参数resolve中出现异常并不会卡死，才继续带catch中。</p><hr><h2 id="all的用法"><a href="#all的用法" class="headerlink" title="all的用法"></a>all的用法</h2><p>&emsp;all的用法简单来说就是谁最后走完就以谁为准执行回调。<br>&emsp;all接收一个数组，数组中都是promise的实例。</p><hr><h2 id="race的用法"><a href="#race的用法" class="headerlink" title="race的用法"></a>race的用法</h2><p>&emsp;race的用法就是谁跑的快就以谁为准执行回调。<br>&emsp;race也是接收一个数组，数组中都是promise的实例。</p><hr><p>&emsp;以上就是我自己记录的一些关于promise的方法，由于理解不深刻没办法用实例更清楚的说明，但是弄明白之后会在以后的bolg中以实例说明的。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;hr&gt;
+&lt;p&gt;&amp;emsp;在学习AJAX的过程中我有很多的不能够理解的地方，例如同步和异步，虽然能有简单的例子给我参考，但是我还是有点模糊，之后又遇到了promise这个ES6中新的属性，我就更加的晕了。但是学习的过程就是这样的，不奢望自己能够一蹴而就，只要自己能够坚持住就满足
+      
+    
+    </summary>
+    
+      <category term="knowledge" scheme="http://yoursite.com/categories/knowledge/"/>
+    
+    
+      <category term="-ES6 promise" scheme="http://yoursite.com/tags/ES6-promise/"/>
+    
+  </entry>
   
   <entry>
     <title>git上传代码的指令</title>
