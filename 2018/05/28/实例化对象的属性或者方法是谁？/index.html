@@ -83,7 +83,7 @@
 
 
 
-  <meta name="keywords" content="前端" />
+  <meta name="keywords" content="面向对象," />
 
 
 
@@ -96,16 +96,18 @@
 
 
 
-<meta name="description" content="那时的你还年轻，不知道这世上的一切已经暗中标好了价格">
-<meta property="og:type" content="website">
-<meta property="og:title" content="梦游小王">
-<meta property="og:url" content="http://yoursite.com/archives/2018/index.html">
+<meta name="description" content="面向对象中如何判实例化对象的属性或者方法是谁？&amp;emsp;在学习如何判断实例化对象的属性或者方法是谁的之前我们要先知道一下几点：1、构造函数的原型（prototype）===实例对象的proto（这里是三等的全等，而且在浏览器中打印的proto是假的不要相信）2、构造函数的原型的方法或者属性只能给它的实例对象用3、prototype这个值是一个对象4、Function是Function构造出来的">
+<meta name="keywords" content="面向对象">
+<meta property="og:type" content="article">
+<meta property="og:title" content="实例化对象的属性或者方法是谁？">
+<meta property="og:url" content="http://yoursite.com/2018/05/28/实例化对象的属性或者方法是谁？/index.html">
 <meta property="og:site_name" content="梦游小王">
-<meta property="og:description" content="那时的你还年轻，不知道这世上的一切已经暗中标好了价格">
+<meta property="og:description" content="面向对象中如何判实例化对象的属性或者方法是谁？&amp;emsp;在学习如何判断实例化对象的属性或者方法是谁的之前我们要先知道一下几点：1、构造函数的原型（prototype）===实例对象的proto（这里是三等的全等，而且在浏览器中打印的proto是假的不要相信）2、构造函数的原型的方法或者属性只能给它的实例对象用3、prototype这个值是一个对象4、Function是Function构造出来的">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-05-28T14:22:46.959Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="梦游小王">
-<meta name="twitter:description" content="那时的你还年轻，不知道这世上的一切已经暗中标好了价格">
+<meta name="twitter:title" content="实例化对象的属性或者方法是谁？">
+<meta name="twitter:description" content="面向对象中如何判实例化对象的属性或者方法是谁？&amp;emsp;在学习如何判断实例化对象的属性或者方法是谁的之前我们要先知道一下几点：1、构造函数的原型（prototype）===实例对象的proto（这里是三等的全等，而且在浏览器中打印的proto是假的不要相信）2、构造函数的原型的方法或者属性只能给它的实例对象用3、prototype这个值是一个对象4、Function是Function构造出来的">
 
 
 
@@ -135,7 +137,7 @@
 
 
 
-  <title>归档 | 梦游小王</title>
+  <title>实例化对象的属性或者方法是谁？ | 梦游小王</title>
   
 
 
@@ -154,7 +156,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
    <a href="https://github.com/MyouXiaoW/MyouxiaoW.github.io" class="github-corner" aria-label="View source on Github"><svg width="91" height="91" viewBox="0 0 250 250" style="fill:black; color:#151513; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="#fff" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="#fff" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -282,296 +284,228 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/28/实例化对象的属性或者方法是谁？/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="梦游小王">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="梦游小王">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">实例化对象的属性或者方法是谁？</h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-28T22:21:53+08:00">
+                2018-05-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 7 篇日志。 继续努力。
-      </span>
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/knowledge/" itemprop="url" rel="index">
+                    <span itemprop="name">knowledge</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  381
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
+      
 
+      
+        <hr>
+<h2 id="面向对象中如何判实例化对象的属性或者方法是谁？"><a href="#面向对象中如何判实例化对象的属性或者方法是谁？" class="headerlink" title="面向对象中如何判实例化对象的属性或者方法是谁？"></a>面向对象中如何判实例化对象的属性或者方法是谁？</h2><p>&emsp;在学习如何判断实例化对象的属性或者方法是谁的之前我们要先知道一下几点：<br>1、构造函数的原型（prototype）===实例对象的<strong>proto</strong>（这里是三等的全等，而且在浏览器中打印的<strong>proto</strong>是假的不要相信）<br>2、构造函数的原型的方法或者属性只能给它的实例对象用<br>3、prototype这个值是一个对象<br>4、Function是Function构造出来的<br>5、Object也是Function构造出来的<br>6、函数fn既是构造函数也是实例化的对象<br>&emsp;根据以上的几点可以找到实例化对象的属性和方法到底是谁了。</p>
+<hr>
+<p>##一些实例##</p>
+<p>根据下面的代码可以练习找到实例对象的方法或者属性<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">function Person(name,age)&#123;</span><br><span class="line">     this.name = name;</span><br><span class="line">     this.age = age;</span><br><span class="line"> &#125;</span><br><span class="line"> Person.prototype.say = function()&#123;</span><br><span class="line">     alert(1);</span><br><span class="line"> &#125;</span><br><span class="line"> Function.prototype.say = function()&#123;</span><br><span class="line">      alert(3);</span><br><span class="line"> &#125;</span><br><span class="line"> Object.prototype.say = function()&#123;</span><br><span class="line">     alert(4);</span><br><span class="line"> &#125;</span><br><span class="line"> Function.say = function()&#123;</span><br><span class="line">     alert(5);</span><br><span class="line"> &#125;</span><br><span class="line"> Person.say = function()&#123;</span><br><span class="line">      alert(2);</span><br><span class="line"> &#125;</span><br><span class="line"> </span><br><span class="line"></span><br><span class="line"> let p = new Person();</span><br><span class="line"> p.say();</span><br><span class="line"> Person.say();</span><br><span class="line"> Function.say();</span><br><span class="line"> Object.say();</span><br></pre></td></tr></table></figure></p>
+<h3 id="总结出来的一些技巧"><a href="#总结出来的一些技巧" class="headerlink" title="总结出来的一些技巧"></a>总结出来的一些技巧</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">p.say</span><br><span class="line">    1、p.say</span><br><span class="line">    2、Person.prototype.say</span><br><span class="line">    3、Object.prototype.say</span><br><span class="line"></span><br><span class="line">Person.say</span><br><span class="line">    1、Person.say</span><br><span class="line">    2、Person.__proto__ -&gt; Function.prototype</span><br><span class="line">    3、Object.prototype.say</span><br><span class="line"></span><br><span class="line">Function.say</span><br><span class="line">    1、Function.say</span><br><span class="line">    2、Function.__proto__ -&gt; Function.prototype</span><br><span class="line">    3、Object.prototype.say</span><br><span class="line"></span><br><span class="line">Object.say</span><br><span class="line">    1、Object.say</span><br><span class="line">    2、Object.__proto__ -&gt; Function.prototype</span><br><span class="line">    3、Object.prototype.say</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+      
+    </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/面向对象/" rel="tag"><i class="fa fa-tag"></i> 面向对象</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
         
-        
+
         
 
         
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2018">2018</h1>
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </span>
           </div>
         
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/05/28/实例化对象的属性或者方法是谁？/" itemprop="url">
-              
-                <span itemprop="name">实例化对象的属性或者方法是谁？</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-05-28T22:21:53+08:00"
-              content="2018-05-28" >
-          05-28
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
+        </div>
+      
       
 
-        
-        
-        
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/27/async的学习笔记/" rel="next" title="async的学习笔记">
+                <i class="fa fa-chevron-left"></i> async的学习笔记
+              </a>
+            
+          </div>
 
-        
-        
+          <span class="post-nav-divider"></span>
 
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/05/27/async的学习笔记/" itemprop="url">
-              
-                <span itemprop="name">async的学习笔记</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-05-27T11:56:46+08:00"
-              content="2018-05-27" >
-          05-27
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/05/24/解构赋值/" itemprop="url">
-              
-                <span itemprop="name">解构赋值</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-05-24T20:31:39+08:00"
-              content="2018-05-24" >
-          05-24
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/05/23/简单的记录promise/" itemprop="url">
-              
-                <span itemprop="name">简单的记录promise</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-05-23T22:13:24+08:00"
-              content="2018-05-23" >
-          05-23
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/05/22/git上传代码的指令/" itemprop="url">
-              
-                <span itemprop="name">git上传代码的指令</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-05-22T20:51:59+08:00"
-              content="2018-05-22" >
-          05-22
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/05/21/git同步数据/" itemprop="url">
-              
-                <span itemprop="name">git同步数据</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-05-21T22:16:52+08:00"
-              content="2018-05-21" >
-          05-21
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/05/17/闭包/" itemprop="url">
-              
-                <span itemprop="name">闭包</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-05-17T17:06:16+08:00"
-              content="2018-05-17" >
-          05-17
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-    </div>
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -579,6 +513,15 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zNjYzOS8xMzE3NA=="></div>
+    </div>
+
+  
+
+
 
 
 
@@ -601,8 +544,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -717,6 +669,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#面向对象中如何判实例化对象的属性或者方法是谁？"><span class="nav-number">1.</span> <span class="nav-text">面向对象中如何判实例化对象的属性或者方法是谁？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#总结出来的一些技巧"><span class="nav-number">1.1.</span> <span class="nav-text">总结出来的一些技巧</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -864,6 +832,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -892,6 +864,17 @@
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 

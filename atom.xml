@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-05-27T03:58:18.575Z</updated>
+  <updated>2018-05-28T14:22:46.959Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>实例化对象的属性或者方法是谁？</title>
+    <link href="http://yoursite.com/2018/05/28/%E5%AE%9E%E4%BE%8B%E5%8C%96%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%B1%9E%E6%80%A7%E6%88%96%E8%80%85%E6%96%B9%E6%B3%95%E6%98%AF%E8%B0%81%EF%BC%9F/"/>
+    <id>http://yoursite.com/2018/05/28/实例化对象的属性或者方法是谁？/</id>
+    <published>2018-05-28T14:21:53.000Z</published>
+    <updated>2018-05-28T14:22:46.959Z</updated>
+    
+    <content type="html"><![CDATA[<hr><h2 id="面向对象中如何判实例化对象的属性或者方法是谁？"><a href="#面向对象中如何判实例化对象的属性或者方法是谁？" class="headerlink" title="面向对象中如何判实例化对象的属性或者方法是谁？"></a>面向对象中如何判实例化对象的属性或者方法是谁？</h2><p>&emsp;在学习如何判断实例化对象的属性或者方法是谁的之前我们要先知道一下几点：<br>1、构造函数的原型（prototype）===实例对象的<strong>proto</strong>（这里是三等的全等，而且在浏览器中打印的<strong>proto</strong>是假的不要相信）<br>2、构造函数的原型的方法或者属性只能给它的实例对象用<br>3、prototype这个值是一个对象<br>4、Function是Function构造出来的<br>5、Object也是Function构造出来的<br>6、函数fn既是构造函数也是实例化的对象<br>&emsp;根据以上的几点可以找到实例化对象的属性和方法到底是谁了。</p><hr><p>##一些实例##</p><p>根据下面的代码可以练习找到实例对象的方法或者属性<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">function Person(name,age)&#123;</span><br><span class="line">     this.name = name;</span><br><span class="line">     this.age = age;</span><br><span class="line"> &#125;</span><br><span class="line"> Person.prototype.say = function()&#123;</span><br><span class="line">     alert(1);</span><br><span class="line"> &#125;</span><br><span class="line"> Function.prototype.say = function()&#123;</span><br><span class="line">      alert(3);</span><br><span class="line"> &#125;</span><br><span class="line"> Object.prototype.say = function()&#123;</span><br><span class="line">     alert(4);</span><br><span class="line"> &#125;</span><br><span class="line"> Function.say = function()&#123;</span><br><span class="line">     alert(5);</span><br><span class="line"> &#125;</span><br><span class="line"> Person.say = function()&#123;</span><br><span class="line">      alert(2);</span><br><span class="line"> &#125;</span><br><span class="line"> </span><br><span class="line"></span><br><span class="line"> let p = new Person();</span><br><span class="line"> p.say();</span><br><span class="line"> Person.say();</span><br><span class="line"> Function.say();</span><br><span class="line"> Object.say();</span><br></pre></td></tr></table></figure></p><h3 id="总结出来的一些技巧"><a href="#总结出来的一些技巧" class="headerlink" title="总结出来的一些技巧"></a>总结出来的一些技巧</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">p.say</span><br><span class="line">    1、p.say</span><br><span class="line">    2、Person.prototype.say</span><br><span class="line">    3、Object.prototype.say</span><br><span class="line"></span><br><span class="line">Person.say</span><br><span class="line">    1、Person.say</span><br><span class="line">    2、Person.__proto__ -&gt; Function.prototype</span><br><span class="line">    3、Object.prototype.say</span><br><span class="line"></span><br><span class="line">Function.say</span><br><span class="line">    1、Function.say</span><br><span class="line">    2、Function.__proto__ -&gt; Function.prototype</span><br><span class="line">    3、Object.prototype.say</span><br><span class="line"></span><br><span class="line">Object.say</span><br><span class="line">    1、Object.say</span><br><span class="line">    2、Object.__proto__ -&gt; Function.prototype</span><br><span class="line">    3、Object.prototype.say</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;hr&gt;
+&lt;h2 id=&quot;面向对象中如何判实例化对象的属性或者方法是谁？&quot;&gt;&lt;a href=&quot;#面向对象中如何判实例化对象的属性或者方法是谁？&quot; class=&quot;headerlink&quot; title=&quot;面向对象中如何判实例化对象的属性或者方法是谁？&quot;&gt;&lt;/a&gt;面向对象中如何判实例化对
+      
+    
+    </summary>
+    
+      <category term="knowledge" scheme="http://yoursite.com/categories/knowledge/"/>
+    
+    
+      <category term="面向对象" scheme="http://yoursite.com/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
+    
+  </entry>
   
   <entry>
     <title>async的学习笔记</title>
