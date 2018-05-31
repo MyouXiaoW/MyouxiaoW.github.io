@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-05-30T14:16:45.520Z</updated>
+  <updated>2018-05-31T15:04:39.977Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>今日学习</title>
+    <link href="http://yoursite.com/2018/05/31/%E4%BB%8A%E6%97%A5%E5%AD%A6%E4%B9%A0/"/>
+    <id>http://yoursite.com/2018/05/31/今日学习/</id>
+    <published>2018-05-31T15:02:27.000Z</published>
+    <updated>2018-05-31T15:04:39.977Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="今日的一点小小的总结吧"><a href="#今日的一点小小的总结吧" class="headerlink" title="今日的一点小小的总结吧"></a>今日的一点小小的总结吧</h2><h3 id="ES6里面的面向对象的继承"><a href="#ES6里面的面向对象的继承" class="headerlink" title="ES6里面的面向对象的继承"></a>ES6里面的面向对象的继承</h3><p>在class里面继承之后，子类里面的constructor的this的指向将是父类，必须要在constructor里面加上super()函数才可以，如果传入的参数没有变化的话可以直接在constructor里面直接传入…args参数，并在在constructor里面的super()中传入…args。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">class person&#123;</span><br><span class="line">        constructor(name)&#123;</span><br><span class="line">            this.name = name;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    class child extends person&#123;</span><br><span class="line">        constructor(...arg)&#123;</span><br><span class="line">            super(...arg);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    let  c= new child(&quot;xiaowang&quot;) ;</span><br><span class="line">    console.log(c.name)//xiaowang</span><br></pre></td></tr></table></figure></p><hr><h3 id="Object-defineproperty"><a href="#Object-defineproperty" class="headerlink" title="Object.defineproperty()"></a>Object.defineproperty()</h3><p>object.defineproperty()最后一个参数是一个对象，对象可以放get(),set()两个方法。<br>get()方法会有一个返回值被作为属性值，默认为undefiend。<br>set()方法将接受唯一参数，并将该参数的新值分配给该属性，默认为 undefined。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">function Archiver() &#123;</span><br><span class="line">  var temperature = null;</span><br><span class="line">  var archive = [];</span><br><span class="line"></span><br><span class="line">  Object.defineProperty(this, &apos;temperature&apos;, &#123;</span><br><span class="line">    get: function() &#123;</span><br><span class="line">      console.log(&apos;get!&apos;);</span><br><span class="line">      return temperature;</span><br><span class="line">    &#125;,</span><br><span class="line">    set: function(value) &#123;</span><br><span class="line">      temperature = value;</span><br><span class="line">      archive.push(&#123; val: temperature &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  this.getArchive = function() &#123; return archive; &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var arc = new Archiver();</span><br><span class="line">arc.temperature; // &apos;get!&apos;</span><br><span class="line">arc.temperature = 11;</span><br><span class="line">arc.temperature = 13;</span><br><span class="line">arc.getArchive(); // [&#123; val: 11 &#125;, &#123; val: 13 &#125;]</span><br></pre></td></tr></table></figure></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">var pattern = &#123;</span><br><span class="line">    get: function () &#123;</span><br><span class="line">        return &apos;I alway return this string,whatever you have assigned&apos;;</span><br><span class="line">    &#125;,</span><br><span class="line">    set: function () &#123;</span><br><span class="line">        this.myname = &apos;this is my name string&apos;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">function TestDefineSetAndGet() &#123;</span><br><span class="line">    Object.defineProperty(this, &apos;myproperty&apos;, pattern);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">var instance = new TestDefineSetAndGet();</span><br><span class="line">instance.myproperty = &apos;test&apos;;</span><br><span class="line"></span><br><span class="line">// &apos;I alway return this string,whatever you have assigned&apos;</span><br><span class="line">console.log(instance.myproperty);</span><br><span class="line">// &apos;this is my name string&apos;</span><br><span class="line">console.log(instance.myname);</span><br></pre></td></tr></table></figure><hr><h3 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h3><p>箭头函数的this指向，总是会指向上一级。<br>箭头函数的this指向不会被call（），bind（），apply（）改变。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;今日的一点小小的总结吧&quot;&gt;&lt;a href=&quot;#今日的一点小小的总结吧&quot; class=&quot;headerlink&quot; title=&quot;今日的一点小小的总结吧&quot;&gt;&lt;/a&gt;今日的一点小小的总结吧&lt;/h2&gt;&lt;h3 id=&quot;ES6里面的面向对象的继承&quot;&gt;&lt;a href=&quot;#ES6里
+      
+    
+    </summary>
+    
+      <category term="knowledge" scheme="http://yoursite.com/categories/knowledge/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>面向对象的继承和ES6的面向对象扩展</title>
