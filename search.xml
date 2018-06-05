@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[React的学习记录]]></title>
+    <url>%2F2018%2F06%2F05%2FReact%E7%9A%84%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%2F</url>
+    <content type="text"><![CDATA[React的学习记录如何开始一个react项目呢？在文件夹中打开cmd操作指令输入一下指令12npm install -g create-react-appcreate-react-app my-app 之后输入以下指令12cd my-appnpm start 输入完以上指令后会自动跳转到localhost：3000在使用react的时候要属性jsx语法写法大致如下： 这两项是为了引入react文件12import React from &apos;react&apos;;import ReactDom from &quot;react-dom&quot;; 这两项是引入了App组件和index的css文件12import App from &quot;./js/app/app&quot;import &quot;./css/index.css&quot; 这句话是启动了自动刷新页面功能1234if(module.hot)&#123; module.hot.accept();&#125; 这句话是渲染页面，组件使用的是单标签来使用的,在jsx语法中单标签中必须要用/来结尾而且首字母必须是大写的，render函数的第一个参数是组件，第二个参数是要渲染的位置，第三个参数是渲染之后的一个回调函数。123456ReactDom.render( &lt;App /&gt;, document.getElementById(&quot;root&quot;)， cb())]]></content>
+      <categories>
+        <category>knowledge</category>
+      </categories>
+      <tags>
+        <tag>React</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[今日学习]]></title>
     <url>%2F2018%2F05%2F31%2F%E4%BB%8A%E6%97%A5%E5%AD%A6%E4%B9%A0%2F</url>
     <content type="text"><![CDATA[今日的一点小小的总结吧ES6里面的面向对象的继承在class里面继承之后，子类里面的constructor的this的指向将是父类，必须要在constructor里面加上super()函数才可以，如果传入的参数没有变化的话可以直接在constructor里面直接传入…args参数，并在在constructor里面的super()中传入…args。123456789101112class person&#123; constructor(name)&#123; this.name = name; &#125; &#125; class child extends person&#123; constructor(...arg)&#123; super(...arg); &#125; &#125; let c= new child(&quot;xiaowang&quot;) ; console.log(c.name)//xiaowang Object.defineproperty()object.defineproperty()最后一个参数是一个对象，对象可以放get(),set()两个方法。get()方法会有一个返回值被作为属性值，默认为undefiend。set()方法将接受唯一参数，并将该参数的新值分配给该属性，默认为 undefined。1234567891011121314151617181920212223function Archiver() &#123; var temperature = null; var archive = []; Object.defineProperty(this, &apos;temperature&apos;, &#123; get: function() &#123; console.log(&apos;get!&apos;); return temperature; &#125;, set: function(value) &#123; temperature = value; archive.push(&#123; val: temperature &#125;); &#125; &#125;); this.getArchive = function() &#123; return archive; &#125;;&#125;var arc = new Archiver();arc.temperature; // &apos;get!&apos;arc.temperature = 11;arc.temperature = 13;arc.getArchive(); // [&#123; val: 11 &#125;, &#123; val: 13 &#125;] 12345678910111213141516171819202122var pattern = &#123; get: function () &#123; return &apos;I alway return this string,whatever you have assigned&apos;; &#125;, set: function () &#123; this.myname = &apos;this is my name string&apos;; &#125;&#125;;function TestDefineSetAndGet() &#123; Object.defineProperty(this, &apos;myproperty&apos;, pattern);&#125;var instance = new TestDefineSetAndGet();instance.myproperty = &apos;test&apos;;// &apos;I alway return this string,whatever you have assigned&apos;console.log(instance.myproperty);// &apos;this is my name string&apos;console.log(instance.myname); 箭头函数箭头函数的this指向，总是会指向上一级。箭头函数的this指向不会被call（），bind（），apply（）改变。]]></content>

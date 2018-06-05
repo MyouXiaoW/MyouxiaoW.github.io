@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-05-31T15:04:39.977Z</updated>
+  <updated>2018-06-05T14:06:13.417Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>React的学习记录</title>
+    <link href="http://yoursite.com/2018/06/05/React%E7%9A%84%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
+    <id>http://yoursite.com/2018/06/05/React的学习记录/</id>
+    <published>2018-06-05T14:05:24.000Z</published>
+    <updated>2018-06-05T14:06:13.417Z</updated>
+    
+    <content type="html"><![CDATA[<hr><h2 id="React的学习记录"><a href="#React的学习记录" class="headerlink" title="React的学习记录"></a>React的学习记录</h2><p>如何开始一个react项目呢？<br>在文件夹中打开cmd操作指令输入一下指令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install -g create-react-app</span><br><span class="line">create-react-app my-app</span><br></pre></td></tr></table></figure></p><p>之后输入以下指令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd my-app</span><br><span class="line">npm start</span><br></pre></td></tr></table></figure></p><hr><p>输入完以上指令后会自动跳转到localhost：3000<br>在使用react的时候要属性jsx语法<br>写法大致如下：</p><p>这两项是为了引入react文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import React from &apos;react&apos;;</span><br><span class="line">import ReactDom from &quot;react-dom&quot;;</span><br></pre></td></tr></table></figure></p><p>这两项是引入了App组件和index的css文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import App from &quot;./js/app/app&quot;</span><br><span class="line">import &quot;./css/index.css&quot;</span><br></pre></td></tr></table></figure></p><p>这句话是启动了自动刷新页面功能<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">if(module.hot)&#123;</span><br><span class="line">    module.hot.accept();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>这句话是渲染页面，组件使用的是单标签<app>来使用的,在jsx语法中单标签中必须要用/来结尾而且首字母必须是大写的，render函数的第一个参数是组件，第二个参数是要渲染的位置，第三个参数是渲染之后的一个回调函数。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">ReactDom.render(</span><br><span class="line">    &lt;App /&gt;,</span><br><span class="line">    document.getElementById(&quot;root&quot;)，</span><br><span class="line">    cb()</span><br><span class="line">)</span><br></pre></td></tr></table></figure></app></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;hr&gt;
+&lt;h2 id=&quot;React的学习记录&quot;&gt;&lt;a href=&quot;#React的学习记录&quot; class=&quot;headerlink&quot; title=&quot;React的学习记录&quot;&gt;&lt;/a&gt;React的学习记录&lt;/h2&gt;&lt;p&gt;如何开始一个react项目呢？&lt;br&gt;在文件夹中打开cmd操作指令
+      
+    
+    </summary>
+    
+      <category term="knowledge" scheme="http://yoursite.com/categories/knowledge/"/>
+    
+    
+      <category term="React" scheme="http://yoursite.com/tags/React/"/>
+    
+  </entry>
   
   <entry>
     <title>今日学习</title>
