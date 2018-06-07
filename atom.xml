@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-06-05T14:06:13.417Z</updated>
+  <updated>2018-06-07T12:46:34.134Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Router学习</title>
+    <link href="http://yoursite.com/2018/06/07/Router%E5%AD%A6%E4%B9%A0/"/>
+    <id>http://yoursite.com/2018/06/07/Router学习/</id>
+    <published>2018-06-07T12:46:05.000Z</published>
+    <updated>2018-06-07T12:46:34.134Z</updated>
+    
+    <content type="html"><![CDATA[<hr><h2 id="Router学习记录"><a href="#Router学习记录" class="headerlink" title="Router学习记录"></a>Router学习记录</h2><p>在react中使用Router的时候先要在npm中下载这个包并且在js中引用才可以使用它。<br>npm i react-router-dom –save<br>首先要在js文件中引用它<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import&#123;BrowserRouter as Router&#125; from &quot;react-router-dom&quot;</span><br></pre></td></tr></table></figure></p><p>在index.js中写的形式,必须用<router></router>标签把组件包起来<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ReactDom.render(</span><br><span class="line">    &lt;Router&gt;</span><br><span class="line">        &lt;App /&gt;</span><br><span class="line">    &lt;/Router&gt;</span><br><span class="line">)</span><br></pre></td></tr></table></figure></p><p>在index.js引用的组件中需要引用<route>在渲染组件的时候来写出path（路径）,后面可以写component或者是<br>render 也可以是chidren<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">&lt;Route path:&quot;/&quot; component=&#123;App&#125;/&gt;</span><br><span class="line"></span><br><span class="line">&lt;Route path:&quot;/&quot; render=&#123;()=&gt;&#123;</span><br><span class="line">        return &lt;App /&gt;//这必须是return后面加上组件</span><br><span class="line">&#125;&#125;/&gt;</span><br><span class="line"></span><br><span class="line">&lt;Route path:&quot;/&quot; children =&#123;App&#125;/&gt;//这里是强制性的，不管path是什么，都强制跳转到children里面的组件</span><br><span class="line"></span><br><span class="line">//path上面可以加上id，在render里面会传入一个props里面有match、location、history等</span><br><span class="line">在Route中如果写了component=&#123;组件&#125;，那么如果要获取URL信息可以去组件中的render函数中的this.props中查找</span><br><span class="line"></span><br><span class="line">&lt;Route path=&quot;/about/:id&quot; render=&#123;(&#123;match:&#123;params&#125;&#125;)=&gt;&#123;</span><br><span class="line">                   switch(params.id)&#123;</span><br><span class="line">                        case &apos;a&apos;:</span><br><span class="line">                            return &lt;About1 /&gt;</span><br><span class="line">                        break;</span><br><span class="line">                        case &apos;b&apos;:</span><br><span class="line">                            return &lt;About2 /&gt;</span><br><span class="line">                        break;</span><br><span class="line">                        case &apos;c&apos;:</span><br><span class="line">                            return &lt;About3 /&gt;</span><br><span class="line">                        break;</span><br><span class="line">                        default:</span><br><span class="line">                            return &lt;About1 /&gt;</span><br><span class="line">                        break;  </span><br><span class="line">                   &#125;    </span><br><span class="line">                &#125;&#125;/&gt;</span><br><span class="line">                </span><br><span class="line">在path前面还可以添加exact 和strict</span><br><span class="line">exact：可以在one后面加上一个/也能打开页面/one/</span><br><span class="line">    /one/one/twotrueno</span><br><span class="line">    /one/one/twofalseyes</span><br><span class="line">    </span><br><span class="line">strict：在后面几个也能打开</span><br><span class="line">    /one//one        no</span><br><span class="line">    /one//one/        yes</span><br><span class="line">    /one//one/two    yes</span><br><span class="line">    </span><br><span class="line">在strict和exact都有的情况下，连一个/都不能加。</span><br><span class="line"></span><br><span class="line">link 组件是一个点击后会跳转的到相应的路径的组件</span><br><span class="line">&lt;link to=&quot;/aa/&quot;&gt;&lt;link /&gt;</span><br><span class="line"></span><br><span class="line">重定向跳转组件to后面是想要重新跳转的路径</span><br><span class="line">&lt;Redirect to=&quot;/aa/&quot; /&gt;</span><br></pre></td></tr></table></figure></route></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;hr&gt;
+&lt;h2 id=&quot;Router学习记录&quot;&gt;&lt;a href=&quot;#Router学习记录&quot; class=&quot;headerlink&quot; title=&quot;Router学习记录&quot;&gt;&lt;/a&gt;Router学习记录&lt;/h2&gt;&lt;p&gt;在react中使用Router的时候先要在npm中下载这个包并且在
+      
+    
+    </summary>
+    
+      <category term="knowledge" scheme="http://yoursite.com/categories/knowledge/"/>
+    
+    
+      <category term="React" scheme="http://yoursite.com/tags/React/"/>
+    
+  </entry>
   
   <entry>
     <title>React的学习记录</title>
