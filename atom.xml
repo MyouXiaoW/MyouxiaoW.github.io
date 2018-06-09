@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-06-07T12:46:34.134Z</updated>
+  <updated>2018-06-09T09:54:04.206Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>react生命周期</title>
+    <link href="http://yoursite.com/2018/06/09/react%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/"/>
+    <id>http://yoursite.com/2018/06/09/react生命周期/</id>
+    <published>2018-06-09T09:53:26.000Z</published>
+    <updated>2018-06-09T09:54:04.206Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="React-生命周期"><a href="#React-生命周期" class="headerlink" title="React 生命周期"></a>React 生命周期</h2><p>我对react生命周期的理解就是在react组件的一些操作原理。<br>那么react的生命周期里面又有哪些呢？</p><p>1、组件初始化<br>        componentWillMount  =&gt;  render  =&gt;  componentDidMount<br>        触发的原因就是组件的初始化。</p><p>2、组件更新props<br>        componentWillReceiveprops  =&gt;  shouldcomponentUpdate  =&gt;  componentWillUpdate  =&gt;                   componentDidUpdate<br>        触发的原因就是props发生了更改</p><p>3、组件的state change<br>        shouldcomponentUpdate  =&gt;  componentWillUpdate  =&gt;  componentDidUpdate<br>        触发的原因就是this.setstate()使state发生了更改</p><p>4、组件的卸载或者是销毁<br>        componentWillUnmount<br>        触发的原因就是组件的卸载或者是销毁</p><hr>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;React-生命周期&quot;&gt;&lt;a href=&quot;#React-生命周期&quot; class=&quot;headerlink&quot; title=&quot;React 生命周期&quot;&gt;&lt;/a&gt;React 生命周期&lt;/h2&gt;&lt;p&gt;我对react生命周期的理解就是在react组件的一些操作原理。&lt;br&gt;那么
+      
+    
+    </summary>
+    
+      <category term="knowledge" scheme="http://yoursite.com/categories/knowledge/"/>
+    
+    
+      <category term="React" scheme="http://yoursite.com/tags/React/"/>
+    
+  </entry>
   
   <entry>
     <title>Router学习</title>

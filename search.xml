@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[react生命周期]]></title>
+    <url>%2F2018%2F06%2F09%2Freact%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%2F</url>
+    <content type="text"><![CDATA[React 生命周期我对react生命周期的理解就是在react组件的一些操作原理。那么react的生命周期里面又有哪些呢？ 1、组件初始化 componentWillMount =&gt; render =&gt; componentDidMount 触发的原因就是组件的初始化。 2、组件更新props componentWillReceiveprops =&gt; shouldcomponentUpdate =&gt; componentWillUpdate =&gt; componentDidUpdate 触发的原因就是props发生了更改 3、组件的state change shouldcomponentUpdate =&gt; componentWillUpdate =&gt; componentDidUpdate 触发的原因就是this.setstate()使state发生了更改 4、组件的卸载或者是销毁 componentWillUnmount 触发的原因就是组件的卸载或者是销毁]]></content>
+      <categories>
+        <category>knowledge</category>
+      </categories>
+      <tags>
+        <tag>React</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Router学习]]></title>
     <url>%2F2018%2F06%2F07%2FRouter%E5%AD%A6%E4%B9%A0%2F</url>
     <content type="text"><![CDATA[Router学习记录在react中使用Router的时候先要在npm中下载这个包并且在js中引用才可以使用它。npm i react-router-dom –save首先要在js文件中引用它1import&#123;BrowserRouter as Router&#125; from &quot;react-router-dom&quot; 在index.js中写的形式,必须用标签把组件包起来12345ReactDom.render( &lt;Router&gt; &lt;App /&gt; &lt;/Router&gt;) 在index.js引用的组件中需要引用在渲染组件的时候来写出path（路径）,后面可以写component或者是render 也可以是chidren123456789101112131415161718192021222324252627282930313233343536373839404142434445&lt;Route path:&quot;/&quot; component=&#123;App&#125;/&gt;&lt;Route path:&quot;/&quot; render=&#123;()=&gt;&#123; return &lt;App /&gt;//这必须是return后面加上组件&#125;&#125;/&gt;&lt;Route path:&quot;/&quot; children =&#123;App&#125;/&gt;//这里是强制性的，不管path是什么，都强制跳转到children里面的组件//path上面可以加上id，在render里面会传入一个props里面有match、location、history等在Route中如果写了component=&#123;组件&#125;，那么如果要获取URL信息可以去组件中的render函数中的this.props中查找&lt;Route path=&quot;/about/:id&quot; render=&#123;(&#123;match:&#123;params&#125;&#125;)=&gt;&#123; switch(params.id)&#123; case &apos;a&apos;: return &lt;About1 /&gt; break; case &apos;b&apos;: return &lt;About2 /&gt; break; case &apos;c&apos;: return &lt;About3 /&gt; break; default: return &lt;About1 /&gt; break; &#125; &#125;&#125;/&gt; 在path前面还可以添加exact 和strictexact：可以在one后面加上一个/也能打开页面/one/ /one /one/two true no /one /one/two false yes strict：在后面几个也能打开 /one/ /one no /one/ /one/ yes /one/ /one/two yes 在strict和exact都有的情况下，连一个/都不能加。link 组件是一个点击后会跳转的到相应的路径的组件&lt;link to=&quot;/aa/&quot;&gt;&lt;link /&gt;重定向跳转组件to后面是想要重新跳转的路径&lt;Redirect to=&quot;/aa/&quot; /&gt;]]></content>
