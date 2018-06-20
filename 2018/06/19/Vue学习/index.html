@@ -83,7 +83,7 @@
 
 
 
-  <meta name="keywords" content="React," />
+  <meta name="keywords" content="-Vue," />
 
 
 
@@ -96,18 +96,18 @@
 
 
 
-<meta name="description" content="React 生命周期我对react生命周期的理解就是在react组件的一些操作原理。那么react的生命周期里面又有哪些呢？ 1、组件初始化        componentWillMount  =&amp;gt;  render  =&amp;gt;  componentDidMount        触发的原因就是组件的初始化。 2、组件更新props        componentWillReceivep">
-<meta name="keywords" content="React">
+<meta name="description" content="Vue的学习 挂载一个Vue1234567891011121314151617181920212223new Vue(&amp;#123;    el:&amp;quot;#root&amp;quot;,    //数据    data:&amp;#123;        arr:[]    &amp;#125;,    //方法    methods:&amp;#123;        &amp;#125;,    //计算属性    comput">
+<meta name="keywords" content="-Vue">
 <meta property="og:type" content="article">
-<meta property="og:title" content="react生命周期">
-<meta property="og:url" content="http://yoursite.com/2018/06/09/react生命周期/index.html">
+<meta property="og:title" content="Vue学习">
+<meta property="og:url" content="http://yoursite.com/2018/06/19/Vue学习/index.html">
 <meta property="og:site_name" content="梦游小王">
-<meta property="og:description" content="React 生命周期我对react生命周期的理解就是在react组件的一些操作原理。那么react的生命周期里面又有哪些呢？ 1、组件初始化        componentWillMount  =&amp;gt;  render  =&amp;gt;  componentDidMount        触发的原因就是组件的初始化。 2、组件更新props        componentWillReceivep">
+<meta property="og:description" content="Vue的学习 挂载一个Vue1234567891011121314151617181920212223new Vue(&amp;#123;    el:&amp;quot;#root&amp;quot;,    //数据    data:&amp;#123;        arr:[]    &amp;#125;,    //方法    methods:&amp;#123;        &amp;#125;,    //计算属性    comput">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-09T09:54:04.206Z">
+<meta property="og:updated_time" content="2018-06-19T13:16:55.712Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="react生命周期">
-<meta name="twitter:description" content="React 生命周期我对react生命周期的理解就是在react组件的一些操作原理。那么react的生命周期里面又有哪些呢？ 1、组件初始化        componentWillMount  =&amp;gt;  render  =&amp;gt;  componentDidMount        触发的原因就是组件的初始化。 2、组件更新props        componentWillReceivep">
+<meta name="twitter:title" content="Vue学习">
+<meta name="twitter:description" content="Vue的学习 挂载一个Vue1234567891011121314151617181920212223new Vue(&amp;#123;    el:&amp;quot;#root&amp;quot;,    //数据    data:&amp;#123;        arr:[]    &amp;#125;,    //方法    methods:&amp;#123;        &amp;#125;,    //计算属性    comput">
 
 
 
@@ -137,7 +137,7 @@
 
 
 
-  <title>react生命周期 | 梦游小王</title>
+  <title>Vue学习 | 梦游小王</title>
   
 
 
@@ -298,7 +298,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/09/react生命周期/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/19/Vue学习/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="梦游小王">
@@ -315,7 +315,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">react生命周期</h1>
+          <h1 class="post-title" itemprop="name headline">Vue学习</h1>
         
 
         <div class="post-meta">
@@ -327,8 +327,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-09T17:53:26+08:00">
-                2018-06-09
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-19T21:15:49+08:00">
+                2018-06-19
               </time>
             
 
@@ -381,7 +381,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  141
+                  411
                 </span>
               
 
@@ -397,7 +397,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  2
                 </span>
               
             </div>
@@ -418,12 +418,19 @@
       
 
       
-        <h2 id="React-生命周期"><a href="#React-生命周期" class="headerlink" title="React 生命周期"></a>React 生命周期</h2><p>我对react生命周期的理解就是在react组件的一些操作原理。<br>那么react的生命周期里面又有哪些呢？</p>
-<p>1、组件初始化<br>        componentWillMount  =&gt;  render  =&gt;  componentDidMount<br>        触发的原因就是组件的初始化。</p>
-<p>2、组件更新props<br>        componentWillReceiveprops  =&gt;  shouldcomponentUpdate  =&gt;  componentWillUpdate  =&gt;                   componentDidUpdate<br>        触发的原因就是props发生了更改</p>
-<p>3、组件的state change<br>        shouldcomponentUpdate  =&gt;  componentWillUpdate  =&gt;  componentDidUpdate<br>        触发的原因就是this.setstate()使state发生了更改</p>
-<p>4、组件的卸载或者是销毁<br>        componentWillUnmount<br>        触发的原因就是组件的卸载或者是销毁</p>
+        <hr>
+<h2 id="Vue的学习"><a href="#Vue的学习" class="headerlink" title="Vue的学习"></a>Vue的学习</h2><hr>
+<h3 id="挂载一个Vue"><a href="#挂载一个Vue" class="headerlink" title="挂载一个Vue"></a>挂载一个Vue</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">new Vue(&#123;</span><br><span class="line">    el:&quot;#root&quot;,</span><br><span class="line">    //数据</span><br><span class="line">    data:&#123;</span><br><span class="line">        arr:[]</span><br><span class="line">    &#125;,</span><br><span class="line">    //方法</span><br><span class="line">    methods:&#123;</span><br><span class="line">    </span><br><span class="line">    &#125;,</span><br><span class="line">    //计算属性</span><br><span class="line">    computed:&#123;</span><br><span class="line">    </span><br><span class="line">    &#125;，</span><br><span class="line">    //侦听</span><br><span class="line">    watch：&#123;</span><br><span class="line">        arr:&#123;</span><br><span class="line">            handler(val,oldval)&#123;</span><br><span class="line">                loaclStorage.setItem(data,JSON.stringify(this.arr))</span><br><span class="line">        &#125;,</span><br><span class="line">        deep:true</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>在上面中methods和computed的都是在第一次挂载的时候会执行，watch是在数据改变的时候会执行，但是如果数据中需要深监听的时候要按照上面的写法写。methods调用一次执行，但是computed不过调用多少次都只指向一次。</p>
 <hr>
+<h3 id="Vue中的常用API"><a href="#Vue中的常用API" class="headerlink" title="Vue中的常用API"></a>Vue中的常用API</h3><p>v-if<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//if判断如果条件成立则显示</span><br><span class="line">v-if =&quot;数据&quot;</span><br><span class="line">v-else-if =&quot;数据&quot;</span><br><span class="line">//else必须是紧跟着if的</span><br><span class="line">v-else</span><br></pre></td></tr></table></figure></p>
+<p>v-for<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">可以用在对象上，也可以用在数组上</span><br><span class="line">v-for =&quot;(val,key) in arr&quot;</span><br></pre></td></tr></table></figure></p>
+<p>v-text<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">v-text=&quot;数据&quot;</span><br><span class="line">    等于dom中的innerText</span><br></pre></td></tr></table></figure></p>
+<p>v-html<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">v-html=&quot;&quot;</span><br><span class="line">    等于dom中的innerhtml</span><br></pre></td></tr></table></figure></p>
+<p>v-on:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">在dom上添加事件</span><br><span class="line">v-on:click = &quot;函数名&quot;</span><br><span class="line"></span><br><span class="line">简写的形式</span><br><span class="line">@click=&quot;函数名&quot;</span><br><span class="line"></span><br><span class="line">修饰符</span><br><span class="line">@click.13  回车</span><br><span class="line">@click.stop  调用stoppropagation（）</span><br><span class="line">@click.prevent 调用preventdefault（）</span><br><span class="line">@click.once只能点一次</span><br></pre></td></tr></table></figure></p>
+<p>v-bind<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">一般是操作的是行间属性的</span><br><span class="line">v-bind：class=&quot;&quot;</span><br><span class="line">简写 ：class= &quot;&quot;</span><br></pre></td></tr></table></figure></p>
+<p>v-modle<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">是用来操作表单的</span><br><span class="line">v-modle = &quot;arr[key]&quot;//这是操作数组或者是对象的写法</span><br><span class="line">v-modle.lazy=&quot;&quot;//在失焦后会操作</span><br><span class="line">v-modle.number=&quot;&quot; type=&quot;number&quot; //这是必须输入的是数字</span><br><span class="line">v-modle.trim=&quot;&quot;//去掉前后空格</span><br></pre></td></tr></table></figure></p>
+<p>v-show<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">设置dom显示不显示，在if和show建议使用show，节省性能</span><br><span class="line">v-show=&quot;&quot;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -449,7 +456,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/React/" rel="tag"><i class="fa fa-tag"></i> React</a>
+            <a href="/tags/Vue/" rel="tag"><i class="fa fa-tag"></i> -Vue</a>
           
         </div>
       
@@ -477,8 +484,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/06/07/Router学习/" rel="next" title="Router学习">
-                <i class="fa fa-chevron-left"></i> Router学习
+              <a href="/2018/06/09/react生命周期/" rel="next" title="react生命周期">
+                <i class="fa fa-chevron-left"></i> react生命周期
               </a>
             
           </div>
@@ -486,10 +493,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/06/19/Vue学习/" rel="prev" title="Vue学习">
-                Vue学习 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -683,7 +686,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#React-生命周期"><span class="nav-number">1.</span> <span class="nav-text">React 生命周期</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Vue的学习"><span class="nav-number">1.</span> <span class="nav-text">Vue的学习</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#挂载一个Vue"><span class="nav-number">1.1.</span> <span class="nav-text">挂载一个Vue</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Vue中的常用API"><span class="nav-number">1.2.</span> <span class="nav-text">Vue中的常用API</span></a></li></ol></li></ol></div>
             
 
           </div>

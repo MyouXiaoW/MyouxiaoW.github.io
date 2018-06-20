@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-06-09T09:54:04.206Z</updated>
+  <updated>2018-06-19T13:16:55.712Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Vue学习</title>
+    <link href="http://yoursite.com/2018/06/19/Vue%E5%AD%A6%E4%B9%A0/"/>
+    <id>http://yoursite.com/2018/06/19/Vue学习/</id>
+    <published>2018-06-19T13:15:49.000Z</published>
+    <updated>2018-06-19T13:16:55.712Z</updated>
+    
+    <content type="html"><![CDATA[<hr><h2 id="Vue的学习"><a href="#Vue的学习" class="headerlink" title="Vue的学习"></a>Vue的学习</h2><hr><h3 id="挂载一个Vue"><a href="#挂载一个Vue" class="headerlink" title="挂载一个Vue"></a>挂载一个Vue</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">new Vue(&#123;</span><br><span class="line">    el:&quot;#root&quot;,</span><br><span class="line">    //数据</span><br><span class="line">    data:&#123;</span><br><span class="line">        arr:[]</span><br><span class="line">    &#125;,</span><br><span class="line">    //方法</span><br><span class="line">    methods:&#123;</span><br><span class="line">    </span><br><span class="line">    &#125;,</span><br><span class="line">    //计算属性</span><br><span class="line">    computed:&#123;</span><br><span class="line">    </span><br><span class="line">    &#125;，</span><br><span class="line">    //侦听</span><br><span class="line">    watch：&#123;</span><br><span class="line">        arr:&#123;</span><br><span class="line">            handler(val,oldval)&#123;</span><br><span class="line">                loaclStorage.setItem(data,JSON.stringify(this.arr))</span><br><span class="line">        &#125;,</span><br><span class="line">        deep:true</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure><p>在上面中methods和computed的都是在第一次挂载的时候会执行，watch是在数据改变的时候会执行，但是如果数据中需要深监听的时候要按照上面的写法写。methods调用一次执行，但是computed不过调用多少次都只指向一次。</p><hr><h3 id="Vue中的常用API"><a href="#Vue中的常用API" class="headerlink" title="Vue中的常用API"></a>Vue中的常用API</h3><p>v-if<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//if判断如果条件成立则显示</span><br><span class="line">v-if =&quot;数据&quot;</span><br><span class="line">v-else-if =&quot;数据&quot;</span><br><span class="line">//else必须是紧跟着if的</span><br><span class="line">v-else</span><br></pre></td></tr></table></figure></p><p>v-for<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">可以用在对象上，也可以用在数组上</span><br><span class="line">v-for =&quot;(val,key) in arr&quot;</span><br></pre></td></tr></table></figure></p><p>v-text<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">v-text=&quot;数据&quot;</span><br><span class="line">    等于dom中的innerText</span><br></pre></td></tr></table></figure></p><p>v-html<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">v-html=&quot;&quot;</span><br><span class="line">    等于dom中的innerhtml</span><br></pre></td></tr></table></figure></p><p>v-on:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">在dom上添加事件</span><br><span class="line">v-on:click = &quot;函数名&quot;</span><br><span class="line"></span><br><span class="line">简写的形式</span><br><span class="line">@click=&quot;函数名&quot;</span><br><span class="line"></span><br><span class="line">修饰符</span><br><span class="line">@click.13  回车</span><br><span class="line">@click.stop  调用stoppropagation（）</span><br><span class="line">@click.prevent 调用preventdefault（）</span><br><span class="line">@click.once只能点一次</span><br></pre></td></tr></table></figure></p><p>v-bind<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">一般是操作的是行间属性的</span><br><span class="line">v-bind：class=&quot;&quot;</span><br><span class="line">简写 ：class= &quot;&quot;</span><br></pre></td></tr></table></figure></p><p>v-modle<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">是用来操作表单的</span><br><span class="line">v-modle = &quot;arr[key]&quot;//这是操作数组或者是对象的写法</span><br><span class="line">v-modle.lazy=&quot;&quot;//在失焦后会操作</span><br><span class="line">v-modle.number=&quot;&quot; type=&quot;number&quot; //这是必须输入的是数字</span><br><span class="line">v-modle.trim=&quot;&quot;//去掉前后空格</span><br></pre></td></tr></table></figure></p><p>v-show<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">设置dom显示不显示，在if和show建议使用show，节省性能</span><br><span class="line">v-show=&quot;&quot;</span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;hr&gt;
+&lt;h2 id=&quot;Vue的学习&quot;&gt;&lt;a href=&quot;#Vue的学习&quot; class=&quot;headerlink&quot; title=&quot;Vue的学习&quot;&gt;&lt;/a&gt;Vue的学习&lt;/h2&gt;&lt;hr&gt;
+&lt;h3 id=&quot;挂载一个Vue&quot;&gt;&lt;a href=&quot;#挂载一个Vue&quot; class=&quot;head
+      
+    
+    </summary>
+    
+      <category term="knowledge" scheme="http://yoursite.com/categories/knowledge/"/>
+    
+    
+      <category term="-Vue" scheme="http://yoursite.com/tags/Vue/"/>
+    
+  </entry>
   
   <entry>
     <title>react生命周期</title>
